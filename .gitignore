@@ -1,5 +1,9 @@
 .bundle
 config/database.yml
+config/initializers/mail.rb
+config/initializers/secret_token.rb
+config/initializers/session_store.rb
+config/initializers/site_keys.rb
 db/*.sqlite3
 log/*.log
 tmp/**/*
