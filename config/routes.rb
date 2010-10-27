@@ -10,10 +10,8 @@ Rails3::Application.routes.draw do
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
   match 'signup' => 'users#new', :as => :signup
-  # match 'register' => 'users#create', :as => :register
-  match 'login' => 'sessions#new', :as => :login
-  match 'logout' => 'sessions#destroy', :as => :logout
-  # match 'activate/:activation_code' => 'users#activate', :as => :activate, :activation_code => nil
+  match 'signin' => 'sessions#new', :as => :signin
+  match 'signout' => 'sessions#destroy', :as => :signout
   match 'activate/:id' => 'accounts#show', :as => :activate
   match 'forgot_password' => 'passwords#new', :as => :forgot_password
   match 'reset_password/:id' => 'passwords#edit', :as => :reset_password
@@ -22,7 +20,6 @@ Rails3::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :roles
-  # resources :users
   resources :users, :member => { :enable => :put } do
     resource :account
     resources :roles

@@ -8,7 +8,7 @@ class RolesController < ApplicationController
   def update
     @user = User.find(params[:user_id])
     @role = Role.find(params[:id])
-    unless @user.has_role?(@role.rolename)
+    unless @user.has_role?(@role.name)
       @user.roles << @role
     end
     redirect_to :action => 'index'
@@ -17,7 +17,7 @@ class RolesController < ApplicationController
   def destroy
     @user = User.find(params[:user_id])
     @role = Role.find(params[:id])
-    if @user.has_role?(@role.rolename)
+    if @user.has_role?(@role.name)
       @user.roles.delete(@role)
     end
     redirect_to :action => 'index'

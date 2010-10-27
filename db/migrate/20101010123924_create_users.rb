@@ -16,7 +16,7 @@ class CreateUsers < ActiveRecord::Migration
       t.timestamps
       t.datetime :deleted_at
     end
-    add_index :users, :login, :unique => true
+    add_index :users, :email, :unique => true
   end
 
   def self.down

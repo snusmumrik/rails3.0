@@ -1,7 +1,7 @@
 class CreateRoles < ActiveRecord::Migration
   def self.up
     create_table :roles do |t|
-      t.string :rolename
+      t.string :name
 
       t.timestamps
       t.datetime :deleted_at

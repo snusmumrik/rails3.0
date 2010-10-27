@@ -16,14 +16,14 @@
 	  <ul>
 	  <li><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
 	  <li><%= link_to 'Change Password', change_password_path %></li>
-	  <li><%= link_to 'Log Out', logout_url %></li>
+	  <li><%= link_to 'Sign Out', signout_url %></li>
 	  </ul>
 	  <% if current_user.has_role?('administrator') %>
 	    <li><%= link_to 'Administer Users', users_path %></li>
 	  <% end %>
 	<% else %>
-	  <li><%= link_to 'Log In', new_session_path %></li>
-	  <li><%= link_to 'Sign Up', new_user_path %></li>
+	  <li><%= link_to 'Sign In', "/signin" %></li>
+	  <li><%= link_to 'Sign Up', "/signup" %></li>
 	  <li><%= link_to 'Forgot Password?', forgot_password_path %></li>
 	<% end %>
 </ul>
@@ -32,7 +32,7 @@
 <p style="color: red"><%= flash[:error] %></p>
 <%= yield %>
 
-<%= if File.exist?("#{RAILS_ROOT}/public/javascripts/#{@controller.controller_name}.js") %>
+<% if File.exist?("#{RAILS_ROOT}/public/javascripts/#{controller.controller_name}.js") %>
 	<%= javascript_include_tag controller.controller_path %>
 <% end %>
 
