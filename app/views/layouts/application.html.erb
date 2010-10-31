@@ -54,14 +54,14 @@
 </div>
 <!-- end div#page -->
 
-<% if File.exist?("#{RAILS_ROOT}/public/javascripts/#{controller.controller_name}.js") %>
+<% if File.exist?("#{Rails.root.to_s}/public/javascripts/#{controller.controller_name}.js") %>
 	<%= javascript_include_tag controller.controller_path %>
 <% end %>
 
 <%= render :partial => "layouts/footer" %>
 <%= render :partial => "layouts/analytics" %>
 
-<% if File.exist?("#{RAILS_ROOT}/public/javascripts/#{controller.controller_name}.js") %>
+<% if File.exist?("#{Rails.root.to_s}/public/javascripts/#{controller.controller_name}.js") %>
 	<%= javascript_include_tag controller.controller_path %>
 <% end %>
 
