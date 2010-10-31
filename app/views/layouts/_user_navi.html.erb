@@ -1,0 +1,14 @@
+<div id="user_navi">
+	<ul>
+		<% if logged_in? %>
+		  <li>ようこそ、<% if current_user.name != "" %><%= current_user.name %><% else %><%= current_user.email %><% end %>さん</li>
+			<li><%= link_to t('link.user.mypage'), "/users/#{current_user.name}" %></li>
+			<li><%= link_to t('link.session.signout'), '/signout' %></li>
+		<% else %>
+		  <li>ようこそ、ゲストさん</li>
+			<li><%= link_to t('link.session.signin'), '/signin' %></li>
+			<li><%= link_to t('link.session.signup'), '/signup' %></li>
+		<% end %>
+	</ul>
+</div >
+<!-- end div#menu -->

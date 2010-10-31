@@ -1,0 +1,15 @@
+<div id="bookmark">
+  <%= link_to image_tag("bookmark/hatena.png", {"width" => "16","height" => "16","alt"=>"はてなブックマークに登録"}), "http://b.hatena.ne.jp/append?http://" + request.url, :target => "blank" %>
+
+	<a href="javascript:url='<%= request.url %>';title='サンプルタイトル';location.href='http://del.icio.us/post?url='+encodeURIComponent(url)+'&amp;title='+encodeURIComponent(title)" target="_blank" ><%= image_tag "bookmark/delicious.gif", {"width" => "16","height" => "16","alt"=>"このエントリを del.icio.us に登録"} %></a>
+
+	<%= link_to image_tag("bookmark/google.png", {"width" => "16","height" => "16","alt"=>"このページを Google Bookmarks に追加"}), "http://www.google.com/bookmarks/mark?op=edit&amp;bkmk=http://" + request.url + "&amp;title=" + "サンプルタイトル" + "&amp;annotation=" + "サンプル説明文" + "&amp;labels=" + "サンプルラベル", :target => "blank"%>
+
+	<a href="javascript:void window.open('http://bookmarks.yahoo.co.jp/bookmarklet/showpopup?t='+encodeURIComponent(document.title)+'&amp;u='+encodeURIComponent(location.href)+'&amp;ei=UTF-8','_blank','width=550,height=480,left=100,top=50,scrollbars=1,resizable=1',0);"><%= image_tag("bookmark/yahoo.gif",{"width" => "16","height" => "16","alt"=>"Yahoo!ブックマークに登録"}) %></a>
+
+  <%= link_to image_tag("bookmark/livedoor.gif", {"width" => "16","height" => "16","alt"=>"この記事をクリップ！"}), "http://clip.livedoor.com/clip/add?link=http://" + request.url + "&amp;title=" + "サンプルタイトル" + "&amp;jump=myclip", :target => "blank" %>
+
+  <%= link_to image_tag("bookmark/newsing.gif", {"width" => "16","height" => "16","alt"=>"newsing に登録"}), "http://newsing.jp/add?title=サンプルタイトル&amp;url=http://" + request.url, :target => "blank" %>
+
+	<a target="_blank" href="http://atode.cc/" onclick='javascript:(function(){var s=document.createElement("scr"+"ipt");s.charset="UTF-8";s.language="javascr"+"ipt";s.type="text/javascr"+"ipt";var d=new Date;s.src="http://atode.cc/bjs.php?d="+d.getMilliseconds();document.body.appendChild(s)})();return false;'><%= image_tag("bookmark/atode.gif", {"width" => "16","height" => "16","alt"=>"あとで読む"}) %></a>
+</div>

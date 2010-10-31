@@ -1,0 +1,41 @@
+<div id="sidebar">
+	<ul>
+	  <li id="signin">
+	    <% unless logged_in? %>
+  	    <h2><%= t('label.session.signin') %></h2>
+  	    <%= form_tag session_path do -%>
+          <p><%= label_tag t('label.session.email') %><br />
+          <%= text_field_tag 'email', @email %></p>
+
+          <p><%= label_tag t('label.session.password') %><br/>
+          <%= password_field_tag 'password', nil %></p><br />
+
+          <p><%= check_box_tag 'remember_me', '1', @remember_me %>
+          <%= label_tag 'remember_me', t('label.session.remenber_me') %></p><br />
+
+          <p><%= submit_tag t('link.session.signin') %></p>
+        <% end -%>
+        <br />
+        <p><%= link_to t('label.user.forget_password'), "/forgot_password" %></p>
+        <p><%= link_to t('label.user.sign_up_as_a_new_user'), "/signup" %></p>
+  	  </li>
+  	<% end %>
+		<li id="search">
+			<%= form_tag(:controller => "welcome", :method => "get") do %>
+			  <%= label_tag :q, t('label.search_for') %>
+        <%= text_field_tag :q, @keyword %>
+        <%= submit_tag t('link.search') %>
+      <% end %>
+		</li>
+		<li>
+			<h2>Side Menu</h2>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</li>
+	</ul>
+	<%= render :partial => "layouts/bookmark" %>
+</div>
+<!-- end div#sidebar -->

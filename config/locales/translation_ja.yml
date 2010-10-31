@@ -1,0 +1,92 @@
+ja: 
+  activerecord: 
+    models: 
+      user: "ユーザー"
+
+    attributes: 
+      user: 
+        login: "ログイン"
+        name: "名前"
+        email: "メールアドレス"
+        crypted_password: "暗号化されたパスワード"
+        salt: "ソルト"
+        remember_token: "トークン"
+        remember_token_expires_at: "トークンの有効期限"
+        activation_code: "アクティベーションコード"
+        activated_at: "アクティベーション日時"
+        state: "状態"
+        deleted_at: "削除日時"
+
+  label:
+    search_for: "さがしもの"
+
+    session:
+      name: "ニックネーム"
+      email: "メールアドレス"
+      password: "パスワード"
+      remenber_me: "ログイン状態を記憶"
+      signin: "ログイン"
+
+    user:
+      name: "ニックネーム"
+      email: "メールアドレス"
+      password: "パスワード"
+      password_confirmation: "パスワードの確認"
+      show_user: "ユーザー情報"
+      edit_user: "ユーザー情報編集"
+      signup: "登録"
+      sign_up_as_a_new_user: "新規ユーザー登録"
+      forget_password: "パスワードをお忘れですか？"
+      request_link_to_reset_password: "パスワードをリセットするURLをメールでお送りいたします。"
+      pick_a_new_password: "新しいパスワードを設定してください。"
+
+    welcome:
+      index: "トップページです。"
+
+  link:
+    home: "ホーム"
+    new: "新規作成"
+    show: "詳細"
+    edit: "編集"
+    destroy: "削除"
+    create: "作成"
+    update: "更新"
+    back: "戻る"
+    search: "検索"
+    submit: "送信"
+
+    user:
+      mypage: "マイページ"
+      reset: "リセット"
+
+    session:
+      signup: "新規ユーザー登録"
+      signin: "ログイン"
+      signout: "ログアウト"
+
+  notice:
+    are_you_sure: "削除してもよろしいですか？"
+
+    session:
+      logged_in_successfully: "ログインしました。"
+      you_have_been_logged_out: "ログアウトしました。"
+
+    user:
+      thanks_for_signing_up: "ユーザー登録ありがとうございました！<br />ご登録いただいたメールアドレスに確認メールを送信していますので、<br />文中のURLをクリックして登録を完了させて下さい。"
+      signup_complete: "ユーザー登録が完了しました。ログインして引き続きお楽しみください。"
+      user_was_successfully_updated: "ユーザー情報を更新しました。"
+      reset_code_sent: "パスワードリセットのURLを送信しました。"
+      password_reset_successfully: "パスワードを変更しました。"
+
+
+  error:
+    session:
+      email_or_password_may_be_incorrect: "メールアドレス、またはパスワードが間違っています。"
+      you_do_not_have_access_to_this_account: "アクセス権限がありません。"
+
+    user:
+      we_could_not_set_up_that_account: "ユーザー登録の前に確認させてください。"
+      the_activation_code_was_missing: "認証コードが正しくありません。メールが途中で改行されている場合は、コピーして一行にしてアクセスしてください。"
+      we_could_not_find_a_user_with_that_activation_code: "該当する認証コードが見つかりません。メールをもう一度ご確認にください。<br />もしくは、すでにユーザー登録されている可能性があります。ログインをお試しください。"
+      this_address_does_not_exist_in_system: "このメールアドレスの登録はありません。"
+      you_do_not_have_access_to_this: "アクセス権限がありません。"

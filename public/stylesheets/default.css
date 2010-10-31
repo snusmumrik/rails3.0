@@ -1,0 +1,343 @@
+/* Basic */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #FFFFFF repeat-x left top;
+	text-align: justify;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	color: #757E82;
+}
+
+h1, h2, h3 {
+	color: #AA2808;
+}
+
+h1 {
+}
+
+h2 {
+}
+
+h3 {
+}
+
+p, blockquote, ul, ol {
+	margin-bottom: 20px;
+	line-height: 2em;
+}
+
+p {
+}
+
+blockquote {
+}
+
+ul, ol, li {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+a {
+	text-decoration: underline;
+	color: #F40C42;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #F40C42;
+}
+
+/* User Navi */
+#user_navi {
+  width: 40%;
+	padding: 10px 0px 10px 60%;
+}
+
+#user_navi ul {
+	margin: 0;
+	padding: 0px 0 0 20px;
+	list-style: none;
+	line-height: normal;
+	margin-left: 30px;
+}
+
+#user_navi li {
+	display: inline;
+	text-align: center;
+/*	font-size: 1.3em;*/
+}
+
+#user_navi a {
+/*	display: block;
+	float: left;*/
+	height: 55px;
+	margin-right: 1px;
+	padding: 35px 10px 0px 10px;
+	letter-spacing: -1px;
+	text-decoration: none;
+	text-align: center;
+	text-transform: lowercase;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	color: #383B3F;
+}
+
+#user_navi a:hover, #user_navi .active a {
+/*  background: #F40C42 repeat-x left bottom;*/
+	color: #F60;
+}
+
+/* Header */
+#header {
+	width: 100%;
+	height: 120px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+  background-color: #A1EEDA;
+}
+
+#header hr {
+	clear: both;
+	width: 100%;
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	width: 200px;
+	height: 76px;
+	margin: 0px;
+	padding-top: 15px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10%;
+}
+
+#logo h1 {
+	margin: 0;
+	padding: 0;
+	text-transform: lowercase;
+	font: normal 46px Georgia, "Times New Roman", Times, serif;
+}
+
+#logo h2 {
+	margin: -4px 0 0 0;
+	padding: 0px 0px 0px 10px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 10px;
+	font-weight: normal;
+	color: #D9170E;
+}
+
+#logo h2 a {
+	color: #9AA9B1;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #D9170E;
+}
+
+/* Title Navi */
+#title_navi {
+	position: absolute;
+	float: left;
+	margin: 50px 0px 5px 25%;
+}
+
+#title_navi li {
+	display: inline;
+	margin: 0px 20px;
+}
+
+#title_navi a {
+	text-decoration: none;
+}
+
+/* Page */
+#page {
+	width: 900px;
+	clear: both;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
+/* Content */
+#content {
+	float: right;
+	width: 630px;
+}
+
+.entry {
+	padding: 50px 40px 30px 40px;
+}
+
+
+/* Sidebar */
+#sidebar {
+	float: left;
+	width: 180px;
+	font-size: 11px;
+	padding: 40px 40px 20px 40px;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: normal;
+}
+
+#sidebar li {
+	margin-bottom: 1px;
+}
+
+#sidebar li ul {
+	margin: 0px;
+	padding: 0px 0px 40px 0px;
+}
+
+#sidebar li li {
+	margin: 0;
+	padding: 7px 0px;
+	border: none;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+#sidebar li li a {
+	padding-left: 20px;
+}
+
+#sidebar h2 {
+	margin: 0px;
+	padding: 0px 0px 20px 0px;
+	text-transform: lowercase;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 180%;
+	font-weight: normal;
+	color: #454E55;
+}
+
+#sidebar h3 {
+	font-size: 77%;
+	color: #454E55;
+}
+
+#sidebar p {
+	margin: 0;
+	line-height: normal;
+	color: #D4C792;
+}
+
+#sidebar a {
+	border: none;
+	text-decoration: none;
+	color: #757E82;
+}
+
+#sidebar a:hover {
+	text-decoration: underline;
+	color: #363636;
+}
+
+/* Search */
+#search {
+	padding: 0px 0px 40px 0px;
+}
+
+#search form {
+	margin: 0;
+	padding: 0;
+}
+
+#search fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#search input {
+	float: left;
+	font: 11px Tahoma, Geneva, sans-serif;
+	padding: 2px 2px;
+}
+
+#search input[name="commit"] {
+	height: 21px;
+	margin-left: 10px;
+	padding: 0px 2px;
+	border: none;
+	background: #E71810;
+	color: #FFFFFF;
+}
+
+/* Bookmark */
+#bookmark {
+	clear: both;
+	float: left;
+}
+
+#news a {
+	font-size: 85%;
+}
+
+/* Footer */
+
+#footer-wrapper {
+	padding: 20px 0px;
+}
+
+#footer {
+	width: 100%;
+	margin: 0 auto;
+	clear: both;
+	color: #757E82;
+  background-color: #A1EEDA;
+}
+
+#footer p {
+	margin: 0;
+	text-align: center;
+	font-size: 11px;
+}
+
+#footer a {
+	text-decoration: underline;
+	color: #757E82;
+}
+
+#footer a:hover {
+	text-decoration: none;
+	color: #F90542;
+}
+
+#footer .page_top {
+  margin-right: 5%;
+  float: right;
+}
+
+#footer .sitemap {
+  padding-left: 30%;
+  clear: both;
+  float: left;
+}
+
+#footer .links {
+  padding-right: 30%;
+  float: right;
+}
+
+#footer .copyright {
+  clear: both;
+  padding: 20px 0px 10px 0px;
+  text-align: center;
+}
