@@ -28,3 +28,6 @@ gem 'mysql2'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'typus', :git => 'git://github.com/fesplugas/typus.git'
+gem "will_paginate", "~> 3.0.pre2"
