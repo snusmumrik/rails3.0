@@ -29,5 +29,6 @@ gem 'mysql2'
 #   gem 'webrat'
 # end
 
+gem 'jquery-rails'
 gem 'typus', :git => 'git://github.com/fesplugas/typus.git'
 gem "will_paginate", "~> 3.0.pre2"
