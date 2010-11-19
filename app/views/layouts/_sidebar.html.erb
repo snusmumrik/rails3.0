@@ -1,41 +1,45 @@
 <div id="sidebar">
 	<ul>
 	  <li id="signin">
-	    <% unless logged_in? %>
+	    <% if !logged_in? && controller.controller_name != "sessions" %>
   	    <h2><%= t('label.session.signin') %></h2>
-  	    <%= form_tag session_path do -%>
-          <p><%= label_tag t('label.session.email') %><br />
-          <%= text_field_tag 'email', @email %></p>
-
-          <p><%= label_tag t('label.session.password') %><br/>
-          <%= password_field_tag 'password', nil %></p><br />
-
-          <p><%= check_box_tag 'remember_me', '1', @remember_me %>
-          <%= label_tag 'remember_me', t('label.session.remenber_me') %></p><br />
-
+  	    <%= form_tag session_path do %>
+          <p>
+            <%= label_tag t('label.session.email') %><br />
+            <%= text_field_tag 'email', @email %>
+          </p>
+          <p>
+            <%= label_tag t('label.session.password') %><br/>
+            <%= password_field_tag 'password', nil %>
+          </p>
+          <p>
+            <%= check_box_tag 'remember_me', '1', @remember_me %>
+            <%= label_tag 'remember_me', t('label.session.remember_me') %>
+          </p>
           <p><%= submit_tag t('link.session.signin') %></p>
-        <% end -%>
-        <br />
-        <p><%= link_to t('label.user.forget_password'), "/forgot_password" %></p>
-        <p><%= link_to t('label.user.sign_up_as_a_new_user'), "/signup" %></p>
-  	  </li>
-  	<% end %>
-		<li id="search">
-			<%= form_tag(:controller => "welcome", :method => "get") do %>
-			  <%= label_tag :q, t('label.search_for') %>
-        <%= text_field_tag :q, @keyword %>
-        <%= submit_tag t('link.search') %>
+        <% end %>
+        <p><%= link_to t('label.user.forget_password'), forgot_password_path %></p>
+        <p><%= link_to t('label.user.sign_up_as_a_new_user'), signup_path %></p>
+      <% elsif logged_in? %>
+        <li><%= link_to t('link.user.edit'), edit_user_path(current_user) %></li>
+        <li><%= link_to t('link.password.change_password'), change_password_path %></li>
+        <li><%= link_to t('link.session.signout'), signout_url %></li>
+        <% if current_user.has_role?('administrator') %>
+      	  <li><%= link_to t('link.user.index'), users_path %></li>
+	      <% end %>
+      <% else %>
+		    <li><%= link_to t('link.session.signin'), signin_path %></li>
+		    <li><%= link_to t('link.session.signup'), signup_path %></li>
+		    <li><%= link_to t('link.password.forgot_password'), forgot_password_path %></li>
       <% end %>
-		</li>
-		<li>
-			<h2>Side Menu</h2>
-			<ul>
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-			</ul>
+    </li>
+		<li id="search">
+			<%#= form_tag(:controller => "welcome", :method => "get") do %>
+	        <%= text_field_tag :q, @keyword %>
+        <%= submit_tag t('link.search') %>
+      <%# end %>
 		</li>
 	</ul>
-	<%= render :partial => "layouts/bookmark" %>
+	<%= render "layouts/bookmark" %>
 </div>
 <!-- end div#sidebar -->

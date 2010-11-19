@@ -1,4 +1,5 @@
-<h1>Sign up as a new user</h1>
+<h2>Sign up as a new user</h2>
+
 <% @user.password = @user.password_confirmation = nil %>
 
 <% if @user.errors.any? %>
@@ -11,24 +12,24 @@
 
 <%= form_for :user, :url => users_path do |f| -%>
   <p>
-    <%= label_tag 'login' %><br/>
+    <%= label_tag t('label.user.login') %><br/>
     <%= f.text_field :login %>
   </p>
 
   <p>
-    <%= label_tag 'email' %><br/>
+    <%= label_tag t('label.user.email') %><br/>
     <%= f.text_field :email %>
   </p>
 
   <p>
-    <%= label_tag 'password' %><br/>
+    <%= label_tag t('label.user.password') %><br/>
     <%= f.password_field :password %>
   </p>
 
   <p>
-    <%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
+    <%= label_tag t('label.user.password_confirmation') %><br/>
     <%= f.password_field :password_confirmation %>
   </p>
 
-  <p><%= submit_tag 'Sign up' %></p>
+  <p><%= submit_tag t('label.user.signup') %></p>
 <% end -%>

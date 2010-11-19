@@ -1,10 +1,10 @@
 <%= form_tag url_for(:action => "update", :id => params[:id]), :method => "put" do %>
-    Password:<br />
+    <%= t('label.password.password') %>:<br />
     <%= password_field_tag :password %><br />
 
-    Confirm Password:<br />
+    <%= t('label.password.password_confirmation') %>:<br />
     <%= password_field_tag :password_confirmation %><br />
 
-    <%= submit_tag "Reset Your Password" %>
+    <%= submit_tag t('link.reset') %>
 <% end %>
 

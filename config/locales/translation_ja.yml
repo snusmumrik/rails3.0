@@ -1,11 +1,12 @@
 ja: 
   activerecord: 
-    models: 
+    models:
+      password: "パスワード"
       user: "ユーザー"
 
     attributes: 
       user: 
-        login: "ログイン"
+        login: "ニックネーム"
         name: "名前"
         email: "メールアドレス"
         crypted_password: "暗号化されたパスワード"
@@ -18,17 +19,32 @@ ja:
         deleted_at: "削除日時"
 
   label:
-    search_for: "さがしもの"
+    submit: "送信"
 
-    session:
-      name: "ニックネーム"
+    account:
+      old_password: "現在のパスワード"
+      new_password: "新しいパスワード"
+      password_validation: "4文字以上40文字以内"
+      password_confirmation: "パスワードの確認"
+      change_password: "パスワード変更"
+
+    password:
       email: "メールアドレス"
       password: "パスワード"
-      remenber_me: "ログイン状態を記憶"
-      signin: "ログイン"
+      password_confirmation: "パスワードの確認"
+      reset_password: "パスワードのリセット"
+
+    session:
+      login: "ニックネーム"
+      name: "名前"
+      email: "メールアドレス"
+      password: "パスワード"
+      remember_me: "サインイン状態を記憶"
+      signin: "サインイン"
 
     user:
-      name: "ニックネーム"
+      login: "ニックネーム"
+      name: "名前"
       email: "メールアドレス"
       password: "パスワード"
       password_confirmation: "パスワードの確認"
@@ -39,9 +55,7 @@ ja:
       forget_password: "パスワードをお忘れですか？"
       request_link_to_reset_password: "パスワードをリセットするURLをメールでお送りいたします。"
       pick_a_new_password: "新しいパスワードを設定してください。"
-
-    welcome:
-      index: "トップページです。"
+      singup: "サインアップ"
 
   link:
     home: "ホーム"
@@ -53,27 +67,32 @@ ja:
     update: "更新"
     back: "戻る"
     search: "検索"
-    submit: "送信"
+    reset: "リセット"
+            
+    password:
+      change_password: "パスワード変更"
+      forgot_password: "パスワードをお忘れですか？"
 
     user:
-      mypage: "マイページ"
-      reset: "リセット"
+      edit: "登録情報変更"
+      index: "会員一覧"
+      show: "マイページ"
 
     session:
       signup: "新規ユーザー登録"
-      signin: "ログイン"
-      signout: "ログアウト"
+      signin: "サインイン"
+      signout: "サインアウト"
 
   notice:
     are_you_sure: "削除してもよろしいですか？"
 
     session:
-      logged_in_successfully: "ログインしました。"
-      you_have_been_logged_out: "ログアウトしました。"
+      logged_in_successfully: "サインインしました。"
+      you_have_been_logged_out: "サインアウトしました。"
 
     user:
       thanks_for_signing_up: "ユーザー登録ありがとうございました！<br />ご登録いただいたメールアドレスに確認メールを送信していますので、<br />文中のURLをクリックして登録を完了させて下さい。"
-      signup_complete: "ユーザー登録が完了しました。ログインして引き続きお楽しみください。"
+      signup_complete: "ユーザー登録が完了しました。サインインして引き続きお楽しみください。"
       user_was_successfully_updated: "ユーザー情報を更新しました。"
       reset_code_sent: "パスワードリセットのURLを送信しました。"
       password_reset_successfully: "パスワードを変更しました。"
@@ -87,6 +106,6 @@ ja:
     user:
       we_could_not_set_up_that_account: "ユーザー登録の前に確認させてください。"
       the_activation_code_was_missing: "認証コードが正しくありません。メールが途中で改行されている場合は、コピーして一行にしてアクセスしてください。"
-      we_could_not_find_a_user_with_that_activation_code: "該当する認証コードが見つかりません。メールをもう一度ご確認にください。<br />もしくは、すでにユーザー登録されている可能性があります。ログインをお試しください。"
+      we_could_not_find_a_user_with_that_activation_code: "該当する認証コードが見つかりません。メールをもう一度ご確認にください。<br />もしくは、すでにユーザー登録されている可能性があります。サインインをお試しください。"
       this_address_does_not_exist_in_system: "このメールアドレスの登録はありません。"
       you_do_not_have_access_to_this: "アクセス権限がありません。"

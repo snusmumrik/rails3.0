@@ -64,10 +64,9 @@ class User < ActiveRecord::Base
     @activated
   end
 
-  # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
-  # Updated 2/20/08
+  # Authenticates a user by their email and unencrypted password.  Returns the user or nil.
   def self.authenticate(email, password)    
-    u = find :first, :conditions => ['email = ?', email] # need to get the salt
+    u = find :first, :conditions => ['email = ? AND activated_at IS NOT NULL', email] # need to get the salt
     u && u.authenticated?(password) ? u : nil  
   end
 
@@ -101,7 +100,7 @@ class User < ActiveRecord::Base
   def remember_me_until(time)
     self.remember_token_expires_at = time
     self.remember_token            = encrypt("#{email}--#{remember_token_expires_at}")
-    save(false)
+    save(:validate => false)
   end
 
   def forget_me

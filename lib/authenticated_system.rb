@@ -35,6 +35,11 @@ module AuthenticatedSystem
       logged_in?
     end
 
+    # only allow the owner
+    def owner_authorized?(id)
+      current_teacher.id == id || access_denied
+    end
+
     # Filter method to enforce a login requirement.
     #
     # To require logins for all actions, use this in your controllers:
@@ -128,7 +133,7 @@ module AuthenticatedSystem
     #
     # We can return to this location by calling #redirect_back_or_default.
     def store_location
-      session[:return_to] = request.request_uri
+      session[:return_to] = request.fullpath
     end
 
     def store_referer

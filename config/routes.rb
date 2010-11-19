@@ -19,13 +19,8 @@ Rails3::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  resource :password, :session
   resources :roles
-  resources :users, :member => { :enable => :put } do
-    resource :account
-    resources :roles
-  end
-  resource :session#, :only => [:new, :create, :destroy]
-  resource :password
 
   # Sample resource route with options:
   #   resources :products do
@@ -38,6 +33,13 @@ Rails3::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+  resources :users do
+    member do
+      put 'enable'
+    end
+    resource :account
+    resources :roles
+  end
 
   # Sample resource route with sub-resources:
   #   resources :products do
@@ -69,5 +71,5 @@ Rails3::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id(.:format)))'
+  # match ':controller(/:action(/:id(.:format)))'
 end

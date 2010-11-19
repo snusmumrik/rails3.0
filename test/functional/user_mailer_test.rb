@@ -1,3 +1,5 @@
+#-*- coding: utf-8 -*-
+
 require 'test_helper'
 require 'user_mailer'
 
@@ -14,7 +16,7 @@ class UserMailerTest < ActionMailer::TestCase
    assert !ActionMailer::Base.deliveries.empty?
 
    assert_equal [@user.email], email.to
-    assert_equal "[YOURSITE] Please activate your new account", email.subject
+    assert_equal "#{MailConfig[:site_name]} - Please activate your new account", email.subject
     assert_match /Your account has been created./, email.encoded
     assert_match /Visit this url to activate your account/, email.encoded
   end
@@ -24,9 +26,9 @@ class UserMailerTest < ActionMailer::TestCase
    assert !ActionMailer::Base.deliveries.empty?
 
     assert_equal [@user.email], email.to
-    assert_equal "[YOURSITE] Your account has been activated!", email.subject
+    assert_equal "#{MailConfig[:site_name]} - Your account has been activated!", email.subject
     assert_match /your account has been activated.  Welcome aboard!/, email.encoded
-    assert_match /http\:\/\/YOURSITE\//, email.encoded
+    assert_match /#{MailConfig[:site_url]}/, email.encoded
   end
 
 end

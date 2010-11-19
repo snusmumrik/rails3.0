@@ -1,8 +1,10 @@
-require "smtp_tls"
+#-*- coding: utf-8 -*-
+require "mail"
 
 # 
 # pop & imap settings
 # 
+
 # module CelebLog
 #   USE_APOP = false
 #   # for DNS health check
@@ -23,6 +25,7 @@ require "smtp_tls"
 # 
 # smtp settings
 #
+
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   :address => "smtp.gmail.com",
@@ -31,4 +34,10 @@ ActionMailer::Base.smtp_settings = {
   :authentication => :plain,
   :user_name => "example@example.com",
   :password => "password"
+}
+
+MailConfig = { 
+  :admin_email => 'test@test.com',
+  :site_name => 'My Site',
+  :site_url => 'http://localhost:3000'
 }

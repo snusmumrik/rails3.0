@@ -24,11 +24,9 @@ class UsersController < ApplicationController
     @user.save!
     #Uncomment to have the user logged in after creating an account - Not Recommended
     #self.current_user = @user
-    flash[:notice] = "Thanks for signing up! Please check your email to activate your account before logging in."
-    redirect_to signin_path
+    redirect_to signin_path, :notice => "Thanks for signing up! Please check your email to activate your account before logging in."
   rescue ActiveRecord::RecordInvalid
-    flash[:error] = "There was a problem creating your account."
-    render :action => 'new'
+    render :action => 'new', :error => "There was a problem creating your account."
   end
 
   def edit
@@ -38,8 +36,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(current_user)
     if @user.update_attributes(params[:user])
-      flash[:notice] = "User updated"
-      redirect_to :action => 'show', :id => current_user
+      redirect_to :action => 'show', :id => current_user, :notice => "User updated"
     else
       render :action => 'edit'
     end
