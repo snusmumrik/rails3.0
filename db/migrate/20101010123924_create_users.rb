@@ -17,6 +17,16 @@ class CreateUsers < ActiveRecord::Migration
       t.datetime :deleted_at
     end
     add_index :users, :email, :unique => true
+
+    #Be sure change the password later or in this migration file
+    user = User.new
+    user.login = "admin"
+    user.name = "admin"
+    user.email = "info@day-trippers.com"
+    user.password = "admin"
+    user.password_confirmation = "admin"
+    user.save(false)
+    user.send(:activate!)
   end
 
   def self.down

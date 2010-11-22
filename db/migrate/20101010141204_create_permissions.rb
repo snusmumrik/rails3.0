@@ -5,17 +5,6 @@ class CreatePermissions < ActiveRecord::Migration
       t.timestamps
     end
 
-    #Make sure the role migration file was generated first    
-    Role.create(:name => 'administrator')
-    #Then, add default admin user 
-    #Be sure change the password later or in this migration file
-    user = User.new
-    user.login = "admin"
-    user.email = "disposablehiro@hotmail.com"
-    user.password = "admin"
-    user.password_confirmation = "admin"
-    user.save(false)
-    user.send(:activate!)
     role = Role.find_by_name('administrator')
     user = User.find_by_login('admin')
     permission = Permission.new
@@ -25,8 +14,6 @@ class CreatePermissions < ActiveRecord::Migration
   end
 
   def self.down
-      drop_table :permissions
-      Role.find_by_name('administrator').destroy      
-      User.find_by_login('admin').destroy      
+    drop_table :permissions
   end
 end

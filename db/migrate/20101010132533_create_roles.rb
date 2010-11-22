@@ -6,6 +6,8 @@ class CreateRoles < ActiveRecord::Migration
       t.timestamps
       t.datetime :deleted_at
     end
+
+    Role.create(:name => 'administrator')
   end
 
   def self.down
