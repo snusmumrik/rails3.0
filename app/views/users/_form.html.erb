@@ -1,0 +1,36 @@
+<%= form_for @user, :html => {:multipart => true} do |f| %>
+  <p>
+    <%= label_tag t('label.user.login') %><br/>
+    <%= f.text_field :login %>
+  </p>
+
+  <p>
+    <%= label_tag t('label.user.email') %><br/>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= label_tag t('label.user.password') %><br/>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= label_tag t('label.user.password_confirmation') %><br/>
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+  <p>
+    <% @user.images.each do |image| %>
+      <%= image_tag image.url(:thumb) %>
+      <%= check_box_tag "delete_images[]", image.id %>
+      <%#= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %>
+      <%= label_tag t('label.destroy') %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= label_tag t('label.user.image') %><br />
+    <%= file_field :image, :image %>
+  </p>
+  <p><%= submit_tag %></p>
+<% end %>

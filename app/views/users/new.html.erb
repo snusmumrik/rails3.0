@@ -10,26 +10,4 @@
   </ul>
 <% end %>
 
-<%= form_for :user, :url => users_path do |f| -%>
-  <p>
-    <%= label_tag t('label.user.login') %><br/>
-    <%= f.text_field :login %>
-  </p>
-
-  <p>
-    <%= label_tag t('label.user.email') %><br/>
-    <%= f.text_field :email %>
-  </p>
-
-  <p>
-    <%= label_tag t('label.user.password') %><br/>
-    <%= f.password_field :password %>
-  </p>
-
-  <p>
-    <%= label_tag t('label.user.password_confirmation') %><br/>
-    <%= f.password_field :password_confirmation %>
-  </p>
-
-  <p><%= submit_tag t('label.user.signup') %></p>
-<% end -%>
+<%= render "form" %>

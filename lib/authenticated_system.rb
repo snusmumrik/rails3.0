@@ -105,7 +105,7 @@ module AuthenticatedSystem
       respond_to do |format|
         format.html do
           #Put your domain name here ex. http://www.example.com
-          domain_name = "http://localhost:3000"
+          domain_name = MailConfig[:site_url]
           http_referer = session[:refer_to]
           if http_referer.nil?
             store_referer

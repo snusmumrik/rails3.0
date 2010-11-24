@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :permissions
   has_many :roles, :through => :permissions
+  has_many :images, :as => :parent, :conditions => "deleted_at IS NULL", :dependent => :destroy
 
   set_table_name 'users'
 

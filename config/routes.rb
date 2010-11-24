@@ -19,7 +19,7 @@ Rails3::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resource :password, :session
+  resource :account, :password, :session
   resources :roles
 
   # Sample resource route with options:

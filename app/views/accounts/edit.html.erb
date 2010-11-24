@@ -1,4 +1,4 @@
-<%= form_tag url_for(:action => "update") do %>
+<%= form_tag :controller => "accounts", :action => "update" do %>
   <p>
     <label for="old_password" class="block"><%= t('label.account.old_password') %></label><br />
     <%= password_field_tag 'old_password', @old_password, :size => 45 %>

@@ -30,5 +30,7 @@ gem 'mysql2'
 # end
 
 gem 'jquery-rails'
+gem 'paperclip'
+gem 'rmagick', :require => 'RMagick'
 gem 'typus', :git => 'git://github.com/fesplugas/typus.git'
 gem "will_paginate", "~> 3.0.pre2"

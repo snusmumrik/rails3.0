@@ -3,3 +3,11 @@
 <p>Joined on: <%= @user.created_at.to_s(:long) %></p>
 
 <p><%= link_to t('link.user.edit'), edit_user_path(@user) %> | <%= link_to t('link.password.change_password'), change_password_path %></p>
+
+<p>
+  <b>Photos:</b>
+  <% @user.images.each do |image| %>
+    <%= image_tag image.url(:medium) %>
+    <%= image_tag image.url(:thumb) %>
+  <% end %>
+</p>

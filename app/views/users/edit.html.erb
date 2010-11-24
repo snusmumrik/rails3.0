@@ -8,10 +8,6 @@
   </ul>
 <% end %>
 
-<%= form_for :user, :url => user_url(@user), :html => { :method => :put } do |f| %>
-  <p><%= t('label.user.email') %><br /><%= f.text_field :email, :size => 60 %></p>
-
-  <%= submit_tag 'Save' %>
-<% end %>
+<%= render "form" %>
 
 <p><%= link_to t('link.user.show'), user_path(@user) %> | <%= link_to t('link.password.change_password'), change_password_path %></p>
