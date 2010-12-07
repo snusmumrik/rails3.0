@@ -52,6 +52,13 @@ a:hover {
 	color: #F40C42;
 }
 
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+
 /* User Navi */
 #user_navi {
   width: 40%;
