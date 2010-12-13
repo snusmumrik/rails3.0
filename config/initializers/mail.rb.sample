@@ -2,7 +2,7 @@
 require "mail"
 
 # 
-# pop & imap settings
+# pop & imap
 # 
 
 # module CelebLog
@@ -23,18 +23,32 @@ require "mail"
 # end
 
 # 
-# smtp settings
+# smtp
 #
 
-ActionMailer::Base.delivery_method = :smtp
-ActionMailer::Base.smtp_settings = {
-  :address => "smtp.gmail.com",
-  :port => 587,
-  :domain => "example.com",
-  :authentication => :plain,
-  :user_name => "example@example.com",
-  :password => "password"
-}
+# ActionMailer::Base.delivery_method = :smtp
+# ActionMailer::Base.smtp_settings = {
+#   :address              => "smtp.gmail.com",
+#   :port                 => 587,
+#   :domain               => 'baci.lindsaar.net',
+#   :user_name            => '<username>',
+#   :password             => '<password>',
+#   :authentication       => 'plain',
+#   :enable_starttls_auto => true
+# }
+
+#
+# sendmail
+#
+
+ActionMailer::Base.delivery_method = :sendmail
+# Defaults to:
+# config.action_mailer.sendmail_settings = {
+#   :location => '/usr/sbin/sendmail',
+#   :arguments => '-i -t'
+# }
+ActionMailer::Base.perform_deliveries = true
+ActionMailer::Base.raise_delivery_errors = true
 
 MailConfig = { 
   :admin_email => 'test@test.com',

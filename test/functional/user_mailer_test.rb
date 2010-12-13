@@ -16,7 +16,7 @@ class UserMailerTest < ActionMailer::TestCase
    assert !ActionMailer::Base.deliveries.empty?
 
    assert_equal [@user.email], email.to
-    assert_equal "#{MailConfig[:site_name]} - Please activate your new account", email.subject
+    assert_equal "#{MailConfig[:site_name]} - Please activate your new account.", email.subject
     assert_match /Your account has been created./, email.encoded
     assert_match /Visit this url to activate your account/, email.encoded
   end

@@ -1,32 +1,30 @@
 class UserMailer < ActionMailer::Base
+  default :from => MailConfig[:admin_email]
+
   def signup_notification(user)
-    setup_email(user)
-    @subject += 'Please activate your new account'
+    @user = user
     @url = "#{MailConfig[:site_url]}/activate/#{user.activation_code}"
+    mail(:to => user.email,
+         :subject => "#{MailConfig[:site_name]} - Please activate your new account.")
   end
 
   def activation(user)
-    setup_email(user)
-    @subject += 'Your account has been activated!'
+    @user = user
     @url = MailConfig[:site_url]
+    mail(:to => user.email,
+         :subject => "#{MailConfig[:site_name]} - Your account has been activated!")
   end
 
   def forgot_password(user)
-    setup_email(user)
-    @subject += 'You have requested to change your password'
+    @user = user
     @url = "#{MailConfig[:site_url]}/reset_password/#{user.password_reset_code}"
-  end
-  def reset_password(user)
-    setup_email(user)
-    @subject += 'Your password has been reset.'
+    mail(:to => user.email,
+         :subject => "#{MailConfig[:site_name]} - You have requested to change your password.")
   end
 
-  protected
-    def setup_email(user)
-      @recipients = "#{user.email}"
-      @from       = MailConfig[:admin_email]
-      @subject    = "#{MailConfig[:site_name]} - "
-      @sent_on    = Time.now
-      @user       = user
-    end
+  def reset_password(user)
+    @user = user
+    mail(:to => user.email,
+         :subject => "#{MailConfig[:site_name]} - Your password has been reset.")
+  end
 end
