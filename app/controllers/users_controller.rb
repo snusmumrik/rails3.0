@@ -44,10 +44,12 @@ class UsersController < ApplicationController
       @user.images << @image if @image.image_file_size
 
       # delete checked images
-      params[:delete_images].each do |id|
-        @delete_image = Image::UserImage.find(id)
-        @delete_image.deleted_at = Time.now
-        @delete_image.save!
+      unless params[:delete_images].blank?
+        params[:delete_images].each do |id|
+          @delete_image = Image::UserImage.find(id)
+          @delete_image.deleted_at = Time.now
+          @delete_image.save!
+        end
       end
 
       redirect_to @user, :notice => "User updated"

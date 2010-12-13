@@ -62,12 +62,11 @@ Rails3::Application.routes.draw do
   #     resources :products
   #   end
 
-  match '/:id' => 'contents#show'
-
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
-  root :to => 'contents#show', :content => "index"
+  match '/:id' => 'contents#show'
+  root :to => 'contents#show', :id => "index"
 
   # See how all your routes lay out with "rake routes"
 

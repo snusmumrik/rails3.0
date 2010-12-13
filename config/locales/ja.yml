@@ -116,7 +116,7 @@ ja:
       messages:
         inclusion: "は一覧にありません。"
         exclusion: "は予約されています。"
-        invalid: "は不正な値です。"
+        invalid: "の形式をご確認ください。"
         confirmation: "が一致しません。"
         accepted: "を受諾してください。"
         empty: "を入力してください。"

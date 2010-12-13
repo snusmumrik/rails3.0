@@ -23,7 +23,6 @@
     <% @user.images.each do |image| %>
       <%= image_tag image.url(:thumb) %>
       <%= check_box_tag "delete_images[]", image.id %>
-      <%#= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %>
       <%= label_tag t('label.destroy') %>
     <% end %>
   </p>
