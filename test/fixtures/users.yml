@@ -1,5 +1,4 @@
 quentin:
-  id:                        1
   login:                     quentin
   email:                     quentin@example.com
   salt:                      356a192b7913b04c54574d18c28d46e6395428ab # SHA1('0')
@@ -11,7 +10,6 @@ quentin:
   activated_at:              <%= 5.days.ago.to_s :db %>
       
 aaron:
-  id:                        2
   login:                     aaron
   email:                     aaron@example.com
   salt:                      da4b9237bacccdf19c0760cab7aec4a8359010b0 # SHA1('1')
@@ -22,9 +20,7 @@ aaron:
   activation_code:           1b6453892473a467d07372d45eb05abc2031647a
   activated_at:              
 
-
 old_password_holder:
-  id:                        3
   login:                     old_password_holder
   email:                     salty_dog@example.com
   salt:                      da4b9237bacccdf19c0760cab7aec4a8359010b0 # SHA1('2')
@@ -33,5 +29,3 @@ old_password_holder:
 
   activation_code:           
   activated_at:              <%= 5.days.ago.to_s :db %>
-
-
