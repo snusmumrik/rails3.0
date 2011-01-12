@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+
+#/opt/local/bin/ruby
+# /usr/local/bin/ruby # for centos
+#!/usr/bin/ruby # for mac
+
+class DnsHealthCheck
+  require 'net/pop'
+  require 'logger'
+
+  @logger = Logger.new("/var/www/celeblog/log/crawl.log", 'daily')
+  @error_logger = Logger.new("/var/www/celeblog/log/error.log", 'daily')
+
+  @use_apop = false
+  @pop_server = {
+    :address  => 'mail.MyDNS.JP',
+    :port     => 110,
+    :account  => '',
+    :password => ''
+  }
+
+  def self.dns_health_check
+  #   # consoleからkickする場合
+  #   # script/runner -e development "app = ActionController::Integration::Session.new; app.get 'posts/new/mail'"
+  #   begin
+  #     # Net::POP3.enable_ssl(OpenSSL::SSL::VERIFY_NONE)
+  #     Net::POP3.APOP(@use_apop).start(@pop_server[:address],
+  #                                      @pop_server[:port],
+  #                                      @pop_server[:account],
+  #                                      @pop_server[:password])
+  #   rescue => e
+  #     p e
+  #   end
+  # end
+
+  pop = Net::POP3.new @pop_server[:address], @pop_server[:port]
+  pop.start @pop_server[:account], @pop_server[:password]
+
+  if pop.mails.empty?
+    puts "MyDNS.JP IpInfo updated via POP3"
+  else
+    puts "MyDNS.JP IpInfo Failed..."
+  end
+end
