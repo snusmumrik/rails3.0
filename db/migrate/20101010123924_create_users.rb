@@ -25,7 +25,7 @@ class CreateUsers < ActiveRecord::Migration
     user.email = "info@day-trippers.com"
     user.password = "admin"
     user.password_confirmation = "admin"
-    user.save(false)
+    user.save(:validate => false)
     user.send(:activate!)
   end
 
