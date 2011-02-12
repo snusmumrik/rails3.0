@@ -160,5 +160,10 @@
         "right-of-fold"  : "$.rightoffold(a, {threshold : 0, container: window})",
         "left-of-fold"   : "!$.rightoffold(a, {threshold : 0, container: window})"
     });
-    
+
+  $("img").lazyload({
+    placeholder : "",
+    effect : "fadeIn"
+  });
+
 })(jQuery);
