@@ -13,10 +13,10 @@ cp config/initializers/site_keys.rb.sample config/initializers/site_keys.rb
 # filepath=`pwd`
 # filename=`basename ${filepath}`
 
-echo "Application name? : "
+echo "New application name? : "
 read filename
 default_name="Rails3"
-echo "Application name is being changed to ${filename}..."
+echo "The application name is being changed to '${filename}'..."
 
 ruby -pi -e "gsub(/${default_name}/, '${filename}')" Rakefile
 ruby -pi -e "gsub(/${default_name}/, '${filename}')" config.ru
@@ -25,10 +25,12 @@ ruby -pi -e "gsub(/${default_name}/, '${filename}')" config/environment.rb
 ruby -pi -e "gsub(/${default_name}/, '${filename}')" config/environments/development.rb
 ruby -pi -e "gsub(/${default_name}/, '${filename}')" config/environments/production.rb
 ruby -pi -e "gsub(/${default_name}/, '${filename}')" config/environments/test.rb
-ruby -pi -e "gsub(/${default_name}/, '${filename}')" config/initializers/secret_token.rb
-ruby -pi -e "gsub(/${default_name}/, '${filename}')" config/initializers/session_store.rb
 # ruby -pi -e "gsub(/${default_name}/, '${filename}')" config/initializers/typus.rb
 ruby -pi -e "gsub(/${default_name}/, '${filename}')" config/routes.rb
 ruby -pi -e "gsub(/${default_name}/, '${filename}')" config/typus/application.yml
 
-echo "Application name has been changed to ${filename}"
+echo "Application name has been changed to '${filename}'."
+
+echo "Bundle install is being processed..."
+bundle install
+echo "Bundel install finished."
