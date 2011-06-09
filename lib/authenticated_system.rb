@@ -37,7 +37,7 @@ module AuthenticatedSystem
 
     # only allow the owner
     def owner_authorized?(id)
-      current_user.id == id || access_denied
+      current_teacher.id == id || access_denied
     end
 
     # Filter method to enforce a login requirement.

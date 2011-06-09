@@ -1,6 +1,8 @@
 ja: 
   activerecord: 
     models:
+      password: "パスワード"
+      user: "ユーザー"
 
     attributes: 
       user: 
