@@ -10,8 +10,19 @@ cp config/initializers/site_keys.rb.sample config/initializers/site_keys.rb
 # shell script references
 # http://d.hatena.ne.jp/BigFatCat/20070807/1186461385
 
-# filepath=`pwd`
-# filename=`basename ${filepath}`
+filepath=`pwd`
+filename=`basename ${filepath}`
+
+# change database.yml
+default_db_name="rails3"
+ruby -pi -e "gsub(/${default_db_name}/, '${dir_name}')" config/database.yml
+echo "database.yml has been rewritted to ${dir_name}"
+
+echo "MySQL password? : "
+read password
+default_name="password:"
+ruby -pi -e "gsub(/password:/, 'password: ${password}')" config/database.yml
+echo "MySQL password has been set."
 
 echo "New application name? : "
 read filename
@@ -34,3 +45,5 @@ echo "Application name has been changed to '${filename}'."
 echo "Bundle install is being processed..."
 bundle install
 echo "Bundel install finished."
+
+# rails generate typus:views
