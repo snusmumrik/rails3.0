@@ -18,10 +18,13 @@ ja:
         state: "状態"
         deleted_at: "削除日時"
 
-  label:
-    submit: "送信"
-    destroy: "削除"
+  helpers:
+    submit:
+      mail_template:
+        create: "%{model}を作成"
+        update: "%{model}を更新"
 
+  label:
     account:
       old_password: "現在のパスワード"
       new_password: "新しいパスワード"
@@ -97,7 +100,6 @@ ja:
       user_was_successfully_updated: "ユーザー情報を更新しました。"
       reset_code_sent: "パスワードリセットのURLを送信しました。"
       password_reset_successfully: "パスワードを変更しました。"
-
 
   error:
     session:

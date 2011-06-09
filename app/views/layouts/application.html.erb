@@ -5,7 +5,7 @@
 
     <%= stylesheet_link_tag :all %>
     <% if File.exist?("#{Rails.root.to_s}/public/stylesheets/alacarte/#{controller.controller_name}.css") %>
-      <%= stylesheet_link_tag controller.controller_path %>
+      <%= stylesheet_link_tag "alacarte/#{controller.controller_path}" %>
     <% end %>
 
     <%= csrf_meta_tag %>
